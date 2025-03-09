@@ -1,0 +1,368 @@
+<html><head><base href="." /><title>Afms oding group</title>
+<style>
+:root {
+  --primary: rgb(6, 149, 245);
+  --dark: rgb(0, 0, 0);
+  --light: rgb(255, 255, 255);
+}
+body{
+  background-color: black;
+  color: rgb(0, 89, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+body {
+  background: var(--dark);
+  color: var(--light);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('iphone-16-wallpapers.webp') center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: var(--primary);
+  color: var(--light);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #f406126c;
+  transform: scale(1.05);
+}
+
+.movies-row {
+  padding: 20px 50px;
+}
+
+.movies-row h2 {
+  margin-bottom: 20px;
+}
+
+.movies-container {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.movie-card {
+  min-width: 200px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+}
+
+.movie-card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.page {
+  display: none;
+  padding-top: 80px;
+}
+
+.page.active {
+  display: block;
+}
+
+.series-grid, .mylist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px 50px;
+}
+
+.genre-filter {
+  padding: 20px 50px;
+}
+
+.genre-filter button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #333;
+  color: var(--light);
+  cursor: pointer;
+}
+
+.genre-filter button.active {
+  background: var(--primary);
+
+}
+img{
+  width: 100%;
+  height:90%;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><h1>AIRFORCE MILITARY SCHOOL JOS.</h1></div>
+    <div class="nav-links">
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('movies')">About</a>
+      <a onclick="showPage('series')">Pictures</a>
+      <!-- <a onclick="showPage('mylist')">My List</a> -->
+    </div>
+  </nav>
+
+  <!-- Home Page -->
+  <div id="home" class="page active">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Airforce Military School Coding And Robotics</h1>
+        <h2>wATCH.YOUNG CHILDREN ADVANCE TO THE FUTURE WITH CODING AND ROBOTICS.</h2>
+        <button class="btn">Get Started</button>
+      </div>
+    </div>
+
+    <section class="movies-row">
+      <h2>Trending Now</h2>
+      <div class="movies-container">
+        <div class="movie-card">
+          <img alt="" src="https://picsum.photos/200/300?random=1">
+        </div>
+        <div class="movie-card">
+          <img alt="Romance movie poster featuring couple in embrace, soft focus" src="https://picsum.photos/200/300?random=2">
+        </div>
+        <div class="movie-card">
+          <img alt="" src="https://picsum.photos/200/300?random=3">
+        </div>
+        <div class="movie-card">
+          <img alt="" src="https://picsum.photos/200/300?random=4">
+        </div>
+        <div class="movie-card">
+          <img alt="" src="https://picsum.photos/200/300?random=5">
+        </div>
+        <div class="movie-card">
+          <img alt="" src="https://picsum.photos/200/300?random=6">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Movies Page -->
+  <div id="movies" class="page">
+    <div class="genre-filter">
+      <button class="active">All</button>
+      <button>Drone</button>
+      <button>Websites</button>
+      <button>Pictures</button>
+    </div>
+    <div class="movies-row">
+      <h2>All</h2>
+      <div class="item1">
+        <h2>We were once normal student of airforce military school until a day came when GP CAPT NU DANJUMA started a coding and robotics class we all joined up but now we are now creating websites on our own,building ou own app and the rest.but now we need financial support to continue runnig our classes.</h2>
+      </div>
+      <img alt="" src="download (11) - Copy.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TV Series Page -->
+  <div id="series" class="page">
+    <div class="series-grid">
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=16">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=17">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=18">
+      </div>
+    </div>
+  </div>
+
+  <!-- My List Page -->
+  <div id="mylist" class="page">
+    <div class="mylist-grid">
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=19">
+      </div>
+      <div class="movie-card">
+        <img alt="" src="https://picsum.photos/200/300?random=20">
+      </div>
+    </div>
+  </div>
+
+<script>
+// Navigation functionality
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+  
+  document.getElementById(pageId).classList.add('active');
+}
+
+// Navbar scroll behavior
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 100) {
+    navbar.style.background = 'rgba(0,0,0,0.9)';
+  } else {
+    navbar.style.background = 'linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 100%)';
+  }
+});
+
+// Movie card hover effects
+const movieCards = document.querySelectorAll('.movie-card');
+movieCards.forEach(card => {
+  card.addEventListener('mouseover', () => {
+    card.style.transform = 'scale(1.1)';
+    card.style.zIndex = '1';
+  });
+  
+  card.addEventListener('mouseout', () => {
+    card.style.transform = 'scale(1)';
+    card.style.zIndex = '0';
+  });
+});
+
+// Genre filter functionality
+const genreButtons = document.querySelectorAll('.genre-filter button');
+genreButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    genreButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+</script>
+
+</body></html>
